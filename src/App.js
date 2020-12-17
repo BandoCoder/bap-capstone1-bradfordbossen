@@ -1,4 +1,5 @@
 import React from "react";
+import Sequencer from "./routes/Sequencer";
 
 import "./App.css";
 
@@ -9,7 +10,9 @@ class App extends React.Component {
         <header>
           <h1>BAP</h1>
         </header>
-        <div className="App"></div>
+        <div className="App">
+          <Sequencer />
+        </div>
       </>
     );
   }
