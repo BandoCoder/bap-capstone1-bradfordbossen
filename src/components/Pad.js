@@ -1,5 +1,6 @@
 import React from "react";
 import DrumContext from "../contexts/DrumContext";
+import "./Pad.css";
 
 export default class Pad extends React.Component {
   static contextType = DrumContext;

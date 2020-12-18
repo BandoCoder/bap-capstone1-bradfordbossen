@@ -66,29 +66,31 @@ export default class Grid extends React.Component {
   };
 
   render() {
-    const length = 32;
+    const length = 16;
     const tracks = ["A1", "B1", "C1", "D1", "E1", "F1"];
     const activePads = this.context.pads;
 
     return (
-      <section className="grid">
+      <div className="container">
         {tracks.map((pad, i) => {
           return (
-            <Pad
-              className={`pad`}
-              key={i}
-              rownum={i}
-              pad={pad}
-              count={length}
-              addPad={(string, string2) => this.addPad(string, string2)}
-              removePad={(string, string2) => this.removePad(string, string2)}
-              activePad={activePads.filter(
-                (currentPad) => currentPad[1] === pad
-              )}
-            />
+            <section className="grid">
+              <Pad
+                className={`pad`}
+                key={i}
+                rownum={i}
+                pad={pad}
+                count={length}
+                addPad={(string, string2) => this.addPad(string, string2)}
+                removePad={(string, string2) => this.removePad(string, string2)}
+                activePad={activePads.filter(
+                  (currentPad) => currentPad[1] === pad
+                )}
+              />
+            </section>
           );
         })}
-      </section>
+      </div>
     );
   }
 }

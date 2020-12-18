@@ -1,6 +1,19 @@
 .sequencer {
+  overflow: auto;
   display: flex;
-  flex-direction: column;
   border-style: solid;
   padding: 5px;
+  max-width: fit-content;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.names p {
+  margin-bottom: 20px;
 }

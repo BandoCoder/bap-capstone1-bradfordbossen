@@ -25,12 +25,6 @@ export default class Sequencer extends React.Component {
         E1: "/sounds/open-hat.wav",
         F1: "/sounds/shout.wav",
       },
-      onload: () => {
-        this.drumMachine.triggerAttackRelease(
-          ["A1", "B1", "C1", "D1", "E1", "F1"],
-          0.4
-        );
-      },
     }).toDestination();
     Tone.Transport.start();
 
@@ -38,7 +32,7 @@ export default class Sequencer extends React.Component {
       this.drumMachine.triggerAttackRelease(note, "16n", time);
     }, this.state.pads);
 
-    this.part.loopEnd = "2m";
+    this.part.loopEnd = "1m";
     this.part.loop = true;
   }
 
@@ -60,6 +54,7 @@ export default class Sequencer extends React.Component {
   };
 
   handlePlayToggle = () => {
+    console.log(this.state.pads);
     if (Tone.context.state !== "running") Tone.context.resume();
     this.setState({ isPlaying: !this.state.isPlaying }, () => {
       if (this.state.isPlaying) this.part.start();
@@ -80,6 +75,7 @@ export default class Sequencer extends React.Component {
   };
 
   render() {
+    const names = ["Kick", "Snare", "Shake", "Closed Hat", "Open Hat", "Shout"];
     return (
       <div className="sequencer">
         <label>
@@ -101,6 +97,12 @@ export default class Sequencer extends React.Component {
           >
             {this.state.isPlaying ? "stop" : "play"}
           </button>
+        </div>
+        <div className="names">
+          {" "}
+          {names.map((name, i) => {
+            return <p key={i}>{name}</p>;
+          })}
         </div>
 
         <DrumContext.Provider
