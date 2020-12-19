@@ -4,6 +4,7 @@
   border-style: solid;
   padding: 5px;
   max-width: fit-content;
+  margin: auto;
 }
 
 .names {
@@ -16,4 +17,9 @@
 
 .names p {
   margin-bottom: 20px;
+}
+
+.transport {
+  text-align: center;
+  padding: 10px;
 }

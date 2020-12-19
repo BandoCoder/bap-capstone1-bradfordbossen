@@ -1,10 +1,7 @@
 import { Component } from "react";
+import AuthApiService from "../services/auth-api-service";
 
 export default class Signup extends Component {
-  static defaultProps = {
-    onRegistrationSuccess: () => {},
-  };
-
   state = {
     error: null,
     user_name: "",
@@ -39,6 +36,11 @@ export default class Signup extends Component {
     }
   };
 
+  handleRegistrationSuccess = (user) => {
+    const { history } = this.props;
+    history.push("/login");
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { user_name, email, password, passwordRepeat } = this.state;
@@ -51,6 +53,23 @@ export default class Signup extends Component {
       }
 
       this.setState({ error: null });
+      AuthApiService.postUser({
+        user_name,
+        email,
+        password,
+      })
+        .then((user) => {
+          this.setState({
+            user_name: "",
+            email: "",
+            password: "",
+            passwordRepeat: "",
+          });
+          this.handleRegistrationSuccess();
+        })
+        .catch((res) => {
+          this.setState({ error: res.error });
+        });
     } catch (err) {
       this.setState({ error: err });
     }
@@ -120,10 +139,6 @@ export default class Signup extends Component {
             placeholder="password"
             required
           />
-          <p class="warning">
-            Password must be 8-72 characters long, contain at least 1 upper and
-            lower case letters, number, and special character.
-          </p>
           <input type="submit" value="submit" />
           <div role="alert">
             {error && <p className="error-msg">{error}</p>}

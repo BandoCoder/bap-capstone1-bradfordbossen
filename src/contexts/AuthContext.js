@@ -22,7 +22,6 @@ export class AuthProvider extends React.Component {
   };
 
   setError = (error) => {
-    console.error(error);
     this.setState({ error });
   };
 

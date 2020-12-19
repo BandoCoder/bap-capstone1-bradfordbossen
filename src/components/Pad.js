@@ -7,7 +7,7 @@ export default class Pad extends React.Component {
 
   handleClickPad = (e) => {
     const clickedPad = `${e.target.dataset.beat} ${this.props.pad}`;
-    const key = e.target.dataset.note;
+    const key = e.target.dataset.pad;
     const targetCount = e.target.dataset.count;
 
     let copy = targetCount;

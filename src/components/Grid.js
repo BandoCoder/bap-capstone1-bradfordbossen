@@ -74,7 +74,7 @@ export default class Grid extends React.Component {
       <div className="container">
         {tracks.map((pad, i) => {
           return (
-            <section className="grid">
+            <section className="grid" key={i * 100}>
               <Pad
                 className={`pad`}
                 key={i}
