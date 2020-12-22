@@ -20,8 +20,9 @@ export default class Sequencer extends React.Component {
       saveSuccessful: false,
     };
     //setup sampler
-    this.drumSamples = new Tone.ToneAudioBuffers(
-      {
+
+    this.drumMachine = new Tone.Sampler({
+      urls: {
         A1: "/sounds/Kick.wav",
         B1: "/sounds/snare.wav",
         C1: "/sounds/shaker.wav",
@@ -29,19 +30,7 @@ export default class Sequencer extends React.Component {
         E1: "/sounds/open-hat.wav",
         F1: "/sounds/shout.wav",
       },
-      () => {
-        this.drumMachine = new Tone.Sampler({
-          urls: {
-            A1: "/sounds/Kick.wav",
-            B1: "/sounds/snare.wav",
-            C1: "/sounds/shaker.wav",
-            D1: "/sounds/closed-hat.wav",
-            E1: "/sounds/open-hat.wav",
-            F1: "/sounds/shout.wav",
-          },
-        }).toDestination();
-      }
-    );
+    }).toDestination();
     Tone.Transport.start();
 
     this.part = new Tone.Part((time, note) => {
