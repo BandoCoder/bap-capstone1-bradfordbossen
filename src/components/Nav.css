@@ -1,9 +1,17 @@
 nav {
-  border-bottom: 2px solid;
   display: flex;
-  flex-flow: row;
+  border-bottom: 4px solid;
   justify-content: space-between;
   align-items: center;
   height: 20px;
-  padding: 7px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.home-link {
+  color: lightgrey;
+  margin: 5px;
+  text-decoration: none;
+  background-color: black;
+  padding: 9px;
 }
