@@ -36,13 +36,17 @@ export default class Sequencer extends React.Component {
     this.part = new Tone.Part((time, note) => {
       this.drumMachine.triggerAttackRelease(note, "16n", time);
     }, this.state.pads);
-
     this.part.loopEnd = "1m";
     this.part.loop = true;
   }
 
+  componentWillUnmount = () => {
+    // stop if navigate away from page
+    this.part.stop();
+    document.title = "BAP";
+  };
+
   componentDidMount = () => {
-    this._isMounted = true;
     const jwt = TokenService.getAuthToken();
     if (jwt) {
       let base64Url = jwt.split(".")[1];
@@ -68,25 +72,21 @@ export default class Sequencer extends React.Component {
             bpm: pattern.pattern_data.bpm,
             title: pattern.title,
           });
+
           this.setPads(pattern.pattern_data.pads);
 
           this.addPadsOnLoad(pattern.pattern_data.pads);
+
+          this.setBpmOnLoad();
         })
         .catch((err) => {
           this.setState({
             error: err.error,
           });
-          // this.props.history.push("/page-not-found");
         });
     } else {
       this.setState({ title: "new pattern (click to edit title)" });
     }
-  };
-
-  componentWillUnmount = () => {
-    this._isMounted = false;
-    this.part.stop();
-    document.title = "BAP";
   };
 
   handleSave = () => {
@@ -156,7 +156,7 @@ export default class Sequencer extends React.Component {
   };
 
   handlePlayToggle = () => {
-    if (Tone.context.state !== "running") Tone.context.resume();
+    Tone.start();
     this.setState({ isPlaying: !this.state.isPlaying }, () => {
       if (this.state.isPlaying) this.part.start();
       else this.part.stop();
@@ -165,6 +165,16 @@ export default class Sequencer extends React.Component {
 
   setPads = (pads) => {
     this.setState({ pads });
+  };
+
+  addPadsOnLoad = (pads) => {
+    pads.forEach((pad) => this.part.add(pad[0], pad[1]));
+  };
+
+  setBpmOnLoad = () => {
+    Tone.Transport.bpm.value = this.state.bpm;
+    //fix tone.js bug where bpm set moves transport position
+    Tone.Transport.position.value = [0, 0, 0];
   };
 
   addPad = (time, key) => {

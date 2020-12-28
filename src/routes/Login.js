@@ -1,5 +1,4 @@
 import React from "react";
-import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
 import AuthContext from "../contexts/AuthContext";
 import "./Login.css";
@@ -32,7 +31,6 @@ export default class Login extends React.Component {
         user_name.value = "";
         password.value = "";
 
-        TokenService.saveAuthToken(res.authToken);
         const base64Url = res.authToken.split(".")[1];
         const decodedValue = JSON.parse(window.atob(base64Url));
         this.context.setUserName(decodedValue.sub);

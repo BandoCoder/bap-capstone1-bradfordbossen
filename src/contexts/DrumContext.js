@@ -4,7 +4,7 @@ const DrumContext = React.createContext({
   pads: [],
   addPad: (string) => {},
   removePad: (string) => {},
-  setPads: (time, key) => {},
+  setPads: (pads) => {},
 });
 
 export default DrumContext;

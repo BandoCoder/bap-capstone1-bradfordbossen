@@ -8,7 +8,7 @@ export default class Grid extends React.Component {
   static contextType = DrumContext;
 
   state = {
-    loadedPads: {},
+    pads: [],
   };
 
   addPad = (activePad1, activePad2) => {
