@@ -1,10 +1,7 @@
 body {
   background-color: rgb(100, 100, 100);
   margin: 25px;
-}
-
-header {
-  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-link-button {
@@ -13,4 +10,5 @@ header {
   text-decoration: none;
   background-color: black;
   padding: 15px;
+  max-width: fit-content;
 }

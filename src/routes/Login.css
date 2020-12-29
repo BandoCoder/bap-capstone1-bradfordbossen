@@ -1,0 +1,13 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  min-width: 200px;
+}

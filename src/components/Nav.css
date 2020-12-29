@@ -10,8 +10,10 @@ nav {
 
 .home-link {
   color: lightgrey;
-  margin: 5px;
   text-decoration: none;
   background-color: black;
-  padding: 9px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
 }

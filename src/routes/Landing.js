@@ -17,15 +17,15 @@ export default function Landing() {
         sound. Never give up!
       </p>
       <h3>Try it out! Click:</h3>
-      <Link className="nav-link-button" to="/sequencer">
+      <Link className="nav-link" to="/sequencer">
         New Pattern
       </Link>
       <h3>To save your patterns, create an account:</h3>
-      <Link className="nav-link-button" to="/signup">
+      <Link className="nav-link" to="/signup">
         Signup
       </Link>
       <h3>Or log in to an existing account:</h3>
-      <Link className="nav-link-button" to="/login">
+      <Link className="nav-link" to="/login">
         Login
       </Link>
     </section>

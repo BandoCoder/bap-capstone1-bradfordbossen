@@ -218,26 +218,48 @@ export default class Sequencer extends React.Component {
             required
           />
         )}
-        <div className="transport">
-          <label>
-            BPM:
-            <input
-              type="number"
-              value={this.state.bpm}
-              className="bpm-selector"
-              onChange={(e) => this.handleBPMChange(e)}
-              min="40"
-              max="360"
-            />
-          </label>
+        <div className="transport-header">
+          <div className="transport">
+            <label>
+              BPM:
+              <input
+                type="number"
+                value={this.state.bpm}
+                className="bpm-selector"
+                onChange={(e) => this.handleBPMChange(e)}
+                min="40"
+                max="360"
+              />
+            </label>
 
-          <button
-            className={this.state.isPlaying ? "playStop" : "play"}
-            type="button"
-            onClick={(e) => this.handlePlayToggle()}
-          >
-            {this.state.isPlaying ? "stop" : "play"}
-          </button>
+            <button
+              className={this.state.isPlaying ? "playStop" : "play"}
+              type="button"
+              onClick={(e) => this.handlePlayToggle()}
+            >
+              {this.state.isPlaying ? "stop" : "play"}
+            </button>
+          </div>
+          <div className="save-block">
+            <button
+              className="save-button"
+              type="button"
+              onClick={(e) => this.handleSave()}
+              disabled={this.state.disableSave}
+            >
+              Save Pattern
+            </button>
+            {this.state.saveSuccessful && (
+              <div className="save-message">
+                <p>Saved Pattern</p>
+              </div>
+            )}
+            {this.state.disableSave && (
+              <div className="save-message">
+                <p>Must be logged-in in order to save</p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="sequencer">
           <div className="names">
@@ -257,26 +279,6 @@ export default class Sequencer extends React.Component {
           >
             <Grid />
           </DrumContext.Provider>
-          <div className="save-block">
-            {this.state.saveSuccessful && (
-              <div className="save-message">
-                <p>Saved Pattern</p>
-              </div>
-            )}
-            {this.state.disableSave && (
-              <div className="save-message">
-                <p>Must be logged-in in order to save</p>
-              </div>
-            )}
-            <button
-              className="save-button"
-              type="button"
-              onClick={(e) => this.handleSave()}
-              disabled={this.state.disableSave}
-            >
-              Save Pattern
-            </button>
-          </div>
         </div>
       </>
     );

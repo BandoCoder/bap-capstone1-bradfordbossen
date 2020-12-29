@@ -50,11 +50,14 @@ class Dashboard extends React.Component {
     const patterns = this.state.patterns;
 
     return patterns.map((pattern) => (
-      <Item
-        key={`patternId${pattern.id}`}
-        pattern={pattern}
-        updatePatterns={(id) => this.updatePatterns(id)}
-      />
+      <li>
+        <Item
+          className="pattern-box"
+          key={`patternId${pattern.id}`}
+          pattern={pattern}
+          updatePatterns={(id) => this.updatePatterns(id)}
+        />
+      </li>
     ));
   };
 

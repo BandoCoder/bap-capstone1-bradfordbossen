@@ -1,9 +1,26 @@
 .landing {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  justify-content: center;
   margin: auto;
-  max-width: 750px;
+}
+
+h1 {
   text-align: center;
 }
 
 h3 {
-  padding: 20px;
+  text-align: center;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: center;
+  color: lightgrey;
+  margin: auto;
+  text-decoration: none;
+  background-color: black;
+  padding: 15px;
+  max-width: fit-content;
 }
