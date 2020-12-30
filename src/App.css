@@ -13,16 +13,6 @@ header {
   border-radius: 5px;
 }
 
-.home-link:hover {
-  font-family: sans-serif;
-  font-size: 50px;
-  font-weight: 900;
-  background-color: black;
-  color: rgb(255, 0, 0);
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
 h1,
 h2 {
   font-family: "sans-serif";

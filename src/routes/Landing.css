@@ -15,11 +15,3 @@ p {
   color: rgb(153, 0, 255);
   font-weight: 800;
 }
-
-.nav-link:hover {
-  background-color: rgb(56, 56, 56);
-  padding: 10px 20px;
-  margin: 0px 10px;
-  border-radius: 5px;
-  color: rgb(153, 0, 255) k;
-}

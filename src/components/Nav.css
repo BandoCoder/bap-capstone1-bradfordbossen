@@ -12,10 +12,3 @@
   font-weight: 800;
   color: rgb(153, 0, 255);
 }
-
-.nav-link-button:hover {
-  background-color: rgb(56, 56, 56);
-  padding: 10px 20px;
-  margin: 0px 10px;
-  border-radius: 5px;
-}
