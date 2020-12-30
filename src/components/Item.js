@@ -58,13 +58,13 @@ export default class Item extends React.Component {
 
     return (
       <li key={this.props.pattern.id} className="listItem">
-        <h3>
-          <Link
-            to={`/${this.context.user_name}/patterns/${this.props.pattern.id}`}
-          >
-            {this.props.pattern.title}
-          </Link>
-        </h3>
+        <Link
+          className="pattern-link"
+          to={`/${this.context.user_name}/patterns/${this.props.pattern.id}`}
+        >
+          {this.props.pattern.title}
+        </Link>
+
         <div>{deleteButtons}</div>
       </li>
     );
