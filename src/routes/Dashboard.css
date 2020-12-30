@@ -1,6 +1,11 @@
 .patterns-page {
   margin: auto;
   max-width: 610px;
+  border-bottom: 2px solid grey;
+}
+
+.patterns-page h2 {
+  font-size: 25px;
 }
 
 li {

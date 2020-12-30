@@ -9,16 +9,17 @@ p {
 }
 
 .nav-link {
-  background-color: rgb(2, 204, 187);
+  background-color: black;
   padding: 10px 20px;
   border-radius: 5px;
-  color: black;
+  color: rgb(153, 0, 255);
+  font-weight: 800;
 }
 
 .nav-link:hover {
-  background-color: rgb(4, 141, 130);
+  background-color: rgb(56, 56, 56);
   padding: 10px 20px;
   margin: 0px 10px;
   border-radius: 5px;
-  color: black;
+  color: rgb(153, 0, 255) k;
 }

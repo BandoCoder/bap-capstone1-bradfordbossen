@@ -48,8 +48,13 @@ button {
 
 .pattern-title-input {
   font-size: 20px;
+  min-width: 400px;
 }
 
 .save-message {
   display: flex;
+}
+
+.pattern-title {
+  font-size: 25px;
 }
