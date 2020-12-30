@@ -4,7 +4,8 @@
   border-style: solid;
   padding: 5px;
   max-width: fit-content;
-  margin: auto;
+  margin: 40px auto;
+  background-color: black;
 }
 
 .names {
@@ -16,7 +17,7 @@
 }
 
 .names p {
-  margin-bottom: 20px;
+  margin: 2px;
 }
 
 .transport {
@@ -25,6 +26,8 @@
 }
 
 .save-block {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -32,4 +35,21 @@
 .transport-header {
   display: flex;
   justify-content: space-around;
+}
+
+label {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+button {
+  font-weight: 700;
+}
+
+.pattern-title-input {
+  font-size: 20px;
+}
+
+.save-message {
+  display: flex;
 }

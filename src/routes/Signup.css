@@ -1,21 +1,43 @@
 .signupForm {
+  margin: 20px;
+}
+
+fieldset {
   display: flex;
-  justify-content: center;
-  padding: 10px;
+  flex-direction: column;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+h2 {
   font-size: 20px;
 }
 
-.registration {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+input {
+  margin: 10px auto;
+  background-color: whitesmoke;
+  max-width: 300px;
+  padding: 7px;
+  color: black;
+  font-weight: 600;
 }
 
-.submit {
-  margin-top: 10px;
-  padding: 20px;
+input::placeholder {
+  color: black;
+  font-weight: 600;
 }
 
-label {
-  padding-top: 10px;
+button {
+  background-color: rgb(2, 204, 187);
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.error-msg {
+  font-size: 20px;
+  color: rgb(75, 0, 0);
+  font-weight: 800;
 }

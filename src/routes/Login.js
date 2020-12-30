@@ -49,24 +49,20 @@ export default class Login extends React.Component {
       <form className="login-form" onSubmit={this.handleSubmit}>
         <fieldset>
           <h2>Login</h2>
-          <label className="loginNameLable" htmlFor="loginName">
-            Username
-          </label>
           <input
             type="text"
             name="user_name"
             id="loginInputName"
-            placeholder="username"
+            placeholder="Username"
+            aria-label="username"
             required
           />
-          <label className="loginPassLable" htmlFor="loginPass">
-            Password
-          </label>
           <input
             type="password"
             name="password"
             id="loginPass"
-            placeholder="password"
+            placeholder="Password"
+            aria-label="password"
             required
           />
           <div role="alert">

@@ -83,21 +83,18 @@ export default class Signup extends Component {
         <form onSubmit={this.handleSubmit}>
           <fieldset>
             <h2>Create an account</h2>
-            <label className="registration" htmlFor="registration-user-name">
-              Username
-            </label>
+
             <input
               type="text"
               name="user_name"
               id="registration-user-name"
               value={this.state.user_name}
               onChange={(e) => this.usernameChanged(e.target.value)}
-              placeholder="username"
+              placeholder="Username"
+              aria-label="Username"
               required
             />
-            <label className="registration" htmlFor="registration-email">
-              Email
-            </label>
+
             <input
               className="registration"
               type="email"
@@ -105,12 +102,11 @@ export default class Signup extends Component {
               id="registration-email"
               value={this.state.email}
               onChange={(e) => this.emailChanged(e.target.value)}
-              placeholder="email"
+              placeholder="Email"
+              aria-label="Email"
               required
             />
-            <label className="registration" htmlFor="registration-password">
-              Password
-            </label>
+
             <input
               className="registration"
               type="password"
@@ -118,15 +114,11 @@ export default class Signup extends Component {
               id="registration-password"
               value={this.state.password}
               onChange={(e) => this.passwordChanged(e.target.value)}
-              placeholder="password"
+              placeholder="Password"
+              aria-label="password"
               required
             />
-            <label
-              className="registration"
-              htmlFor="registration-password-repeat"
-            >
-              Confirm Password
-            </label>
+
             <input
               className="registration"
               type="password"
@@ -135,10 +127,13 @@ export default class Signup extends Component {
               value={this.state.passwordRepeat}
               onChange={(e) => this.passwordRepeatChanged(e.target.value)}
               onBlur={() => this.passwordConfirm()}
-              placeholder="password"
+              placeholder="Confirm Password"
+              aria-label="Confirm Password"
               required
             />
-            <input className="submit" type="submit" value="submit" />
+            <button className="submit" type="submit" value="submit">
+              Submit
+            </button>
             <div role="alert">
               {error && <p className="error-msg">{error}</p>}
             </div>

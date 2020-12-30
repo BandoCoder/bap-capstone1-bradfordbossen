@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from "./custom-routers/PrivateRoute";
 import PublicRoute from "./custom-routers/PublicRoute";
 import Nav from "./components/Nav";
@@ -80,6 +80,11 @@ class App extends React.Component {
     return (
       <>
         <header>
+          <h1>
+            <Link className="home-link" to="/">
+              BAP
+            </Link>
+          </h1>
           <Nav />
         </header>
         <div className="App">

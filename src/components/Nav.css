@@ -1,19 +1,20 @@
-nav {
+.nav {
   display: flex;
-  border-bottom: 4px solid;
   justify-content: space-between;
-  align-items: center;
-  height: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
 }
 
-.home-link {
-  color: lightgrey;
-  text-decoration: none;
-  background-color: black;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 20px;
-  padding-left: 20px;
+.nav-link-button {
+  background-color: rgb(2, 204, 187);
+  padding: 10px 20px;
+  margin: 0px 10px;
+  border-radius: 5px;
+  font-weight: 800;
+  color: black;
+}
+
+.nav-link-button:hover {
+  background-color: rgb(4, 141, 130);
+  padding: 10px 20px;
+  margin: 0px 10px;
+  border-radius: 5px;
 }

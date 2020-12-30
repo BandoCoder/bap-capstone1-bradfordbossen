@@ -1,26 +1,24 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  justify-content: center;
   margin: auto;
+  max-width: 600px;
 }
 
-h1 {
-  text-align: center;
-}
-
-h3 {
-  text-align: center;
+p {
+  font-weight: 600;
+  margin: 30px;
 }
 
 .nav-link {
-  display: flex;
-  justify-content: center;
-  color: lightgrey;
-  margin: auto;
-  text-decoration: none;
-  background-color: black;
-  padding: 15px;
-  max-width: fit-content;
+  background-color: rgb(2, 204, 187);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+.nav-link:hover {
+  background-color: rgb(4, 141, 130);
+  padding: 10px 20px;
+  margin: 0px 10px;
+  border-radius: 5px;
+  color: black;
 }

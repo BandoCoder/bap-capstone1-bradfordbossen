@@ -1,3 +1,12 @@
+.patterns-page {
+  margin: auto;
+  max-width: 550px;
+}
+
 li {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.pattern-box {
+  font-size: 20px;
 }

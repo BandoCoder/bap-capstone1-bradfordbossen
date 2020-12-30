@@ -16,39 +16,45 @@ class Nav extends React.Component {
     return (
       <nav className="nav">
         {TokenService.hasAuthToken() ? (
-          <div className="nav-main">
-            <Link
-              className="nav-link-button"
-              to={`/${this.context.user_name}/patterns`}
-            >
-              Dashboard
-            </Link>
-            <Link
-              className="nav-link-button"
-              to="/"
-              onClick={() => this.logout()}
-            >
-              Logout
-            </Link>
-          </div>
+          <>
+            <div className="left">
+              <Link
+                className="nav-link-button signup-link"
+                to={`/${this.context.user_name}/patterns`}
+              >
+                Dashboard
+              </Link>
+              <Link
+                className="nav-link-button login-link"
+                to="/"
+                onClick={() => this.logout()}
+              >
+                Logout
+              </Link>
+            </div>
+            <div className="right">
+              <Link className="nav-link-button new-link" to="/sequencer">
+                New
+              </Link>
+            </div>
+          </>
         ) : (
-          <div className="nav-main">
-            <Link className="nav-link-button" to="/signup">
-              Signup
-            </Link>
-            <Link className="nav-link-button" to="/login">
-              Login
-            </Link>
-          </div>
+          <>
+            <div className="left">
+              <Link className="nav-link-button signup-link" to="/signup">
+                Signup
+              </Link>
+              <Link className="nav-link-button login-link" to="/login">
+                Login
+              </Link>
+            </div>
+            <div className="right">
+              <Link className="nav-link-button new-link" to="/sequencer">
+                New
+              </Link>
+            </div>
+          </>
         )}
-        <h1>
-          <Link className="home-link" to="/">
-            BAP
-          </Link>
-        </h1>
-        <Link className="nav-link-button" to="/sequencer">
-          New Pattern
-        </Link>
       </nav>
     );
   }
