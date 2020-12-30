@@ -1,8 +1,8 @@
 .grid {
   margin: 10px;
   display: flex;
-  border-style: solid;
+  border: 2.5px solid;
   justify-content: center;
-  padding: 3px;
+  padding: 4px;
   width: 600px;
 }

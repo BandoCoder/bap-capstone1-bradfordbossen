@@ -1,3 +1,7 @@
 .login-form {
   margin: 20px;
 }
+
+.login-form h2 {
+  font-size: 25px;
+}
