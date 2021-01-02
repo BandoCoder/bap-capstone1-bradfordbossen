@@ -1,8 +1,11 @@
 # BAP
 
 [Live app]https://bap-capstone1-bradfordbosen.vercel.app/
+
 [Client repository]https://github.com/BandoCoder/bap-capstone1-bradfordbossen
+
 [API documentation]https://github.com/BandoCoder/bap-server-bradfordbossen/blob/main/README.md
+
 [API repository]https://github.com/BandoCoder/bap-server-bradfordbossen
 
 ## Screenshots
@@ -16,19 +19,28 @@ BAP is a web based drum sequencer, used for making and saving beats. Feel free t
 
 ## Instructions
 
-Clone the repo
-run 'npm i' to install dependencies
-run 'npm start'
+1. Clone the repo
+2. run 'npm i' to install dependencies
+3. run 'npm start'
 
 ## Technical
 
 #### Front
 
 Tone.js interfaces with the Web Audio Api.
+
 (Documentation here: https://tonejs.github.io/)
+
 React.js
+
 CSS
 
 #### Back
 
-Node.js, Postgres, REST, Express
+Node.js
+
+Postgres
+
+REST
+
+Express
