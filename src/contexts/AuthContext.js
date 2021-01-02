@@ -1,5 +1,6 @@
 import React from "react";
 
+// ** AUTHORIZATION CONTEXT **
 const AuthContext = React.createContext({
   setSignIn: () => {},
   setSignOut: () => {},

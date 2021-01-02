@@ -8,6 +8,7 @@ import Item from "../components/Item";
 
 import "./Dashboard.css";
 
+// ** LIST OF USER PATTERNS ** (PRIVATE ROUTE)
 class Dashboard extends React.Component {
   static contextType = AuthContext;
 
@@ -50,14 +51,12 @@ class Dashboard extends React.Component {
     const patterns = this.state.patterns;
 
     return patterns.map((pattern) => (
-      <li>
-        <Item
-          className="pattern-box"
-          key={`patternId${pattern.id}`}
-          pattern={pattern}
-          updatePatterns={(id) => this.updatePatterns(id)}
-        />
-      </li>
+      <Item
+        className="pattern-box"
+        key={`patternId${pattern.id}`}
+        pattern={pattern}
+        updatePatterns={(id) => this.updatePatterns(id)}
+      />
     ));
   };
 

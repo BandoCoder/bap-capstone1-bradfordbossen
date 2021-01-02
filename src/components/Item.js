@@ -5,6 +5,7 @@ import PatternsApiService from "../services/pat-api-service";
 // import TokenService from "../services/token-service";
 import "./Item.css";
 
+// ** ITEM COMPONENT FOR DASHBOARD LIST OF PATTERNS FOR EACH USER **
 export default class Item extends React.Component {
   state = {
     confirmDelete: false,

@@ -6,22 +6,28 @@ import PatternsApiService from "../services/pat-api-service";
 import TokenService from "../services/token-service";
 import DrumContext from "../contexts/DrumContext";
 
+// ** SEQUENCER COMPONTENT **
+
+// Using Tone.js to handle the interface to the web audio api.  Tone.js isn't perfect, so be prepared to work out a few bugs.
+
 export default class Sequencer extends React.Component {
   static contextType = DrumContext;
 
   constructor(props) {
     super(props);
     this.state = {
-      bpm: 87,
+      bpm: 120,
       pads: [],
       title: "",
       playing: false,
       disableSave: false,
       saveSuccessful: false,
     };
-    //setup sampler
+    
+//Setup sampler insturment from Tone.js library.
 
     this.drumMachine = new Tone.Sampler({
+// Set URLs of each audio file.  This can be populated by a database; for now we just have it in the project.
       urls: {
         A1: "/sounds/Kick.wav",
         B1: "/sounds/snare.wav",
@@ -30,9 +36,11 @@ export default class Sequencer extends React.Component {
         E1: "/sounds/open-hat.wav",
         F1: "/sounds/shout.wav",
       },
+// Route sampler to master output audio channel.  Other effects and instruments can be added using these functions within Tone.js library.
     }).toDestination();
     Tone.Transport.start();
 
+// Create loop using Tone.js component "Part".  A new "Part" can be created for each new instrument.
     this.part = new Tone.Part((time, note) => {
       this.drumMachine.triggerAttackRelease(note, "16n", time);
     }, this.state.pads);
@@ -40,13 +48,15 @@ export default class Sequencer extends React.Component {
     this.part.loop = true;
   }
 
+// Stop all audio when user navigates away from sequencer page.
   componentWillUnmount = () => {
-    // stop if navigate away from page
     this.part.stop();
     document.title = "BAP";
   };
 
+// Implement logic to populate pattern from database information, or load new pattern defaults
   componentDidMount = () => {
+// If JWT present, load user pattern
     const jwt = TokenService.getAuthToken();
     if (jwt) {
       let base64Url = jwt.split(".")[1];
@@ -60,9 +70,11 @@ export default class Sequencer extends React.Component {
         );
       }
     } else {
+// Disable save when not logged in
       this.setState({ disableSave: true });
     }
     const patternIdToLoad = this.props.match.params.pattern_id;
+// If pattern ID exists, find that pattern and load all parameters of that pattern.
     if (patternIdToLoad != null) {
       PatternsApiService.getPatternById(patternIdToLoad)
         .then((pattern) => {
@@ -84,11 +96,16 @@ export default class Sequencer extends React.Component {
             error: err.error,
           });
         });
+// Load new pattern defaults
     } else {
       this.setState({ title: "new pattern (click to edit title)" });
     }
   };
 
+
+// ** HANDLER FUNCTIONS **
+
+// Handle save new pattern or edit existing pattern (If Null POST, else PATCH)
   handleSave = () => {
     if (this.props.match.params.pattern_id == null) {
       this.insertNewPattern();
@@ -97,6 +114,7 @@ export default class Sequencer extends React.Component {
     }
   };
 
+// POST
   insertNewPattern = () => {
     let pattern_data = {
       bpm: this.state.bpm,
@@ -116,6 +134,7 @@ export default class Sequencer extends React.Component {
       });
   };
 
+// PATCH
   saveEditsPattern = () => {
     const patternIdToSave = this.props.match.params.pattern_id;
     let patternStorage = {
@@ -173,7 +192,7 @@ export default class Sequencer extends React.Component {
 
   setBpmOnLoad = () => {
     Tone.Transport.bpm.value = this.state.bpm;
-    //fix tone.js bug where bpm set moves transport position
+    //Fix Tone.js bug where bpm set moves transport position to random places
     Tone.Transport.position.value = [0, 0, 0];
   };
 

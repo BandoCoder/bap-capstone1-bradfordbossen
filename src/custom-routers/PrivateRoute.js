@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import TokenService from "../services/token-service";
 import AuthContext from "../contexts/AuthContext";
 
+// ** ROUTE FOR AUTHORIZED USERS ONLY **
 export default function PrivateRoute({ component, ...props }) {
   const Component = component;
 

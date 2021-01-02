@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Landing.css";
 
+// ** LANDING, THE FIRST PAGE YOU SEE (PUBLIC ROUTE) **
 export default function Landing() {
   return (
     <section className="landing">

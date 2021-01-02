@@ -1,5 +1,6 @@
 import React from "react";
 
+// ** CONTEXT SERVICING ALL SEQUENCER COMPONENTS **
 const DrumContext = React.createContext({
   pads: [],
   addPad: (string) => {},

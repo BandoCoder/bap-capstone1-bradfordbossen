@@ -3,11 +3,13 @@ import AuthApiService from "../services/auth-api-service";
 import AuthContext from "../contexts/AuthContext";
 import "./Login.css";
 
+// ** LOGIN ROUTE FOR EXISTING USERS (PRIVATE ROUTE) **
 export default class Login extends React.Component {
   static contextType = AuthContext;
 
   state = { error: null };
 
+  // Push to patterns page on login success
   handleLoginSuccess = (username) => {
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/";
@@ -18,6 +20,7 @@ export default class Login extends React.Component {
     }
   };
 
+  // Submit button logic
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ error: null });

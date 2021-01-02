@@ -4,6 +4,7 @@ import "./Nav.css";
 import TokenService from "../services/token-service";
 import IdleService from "../services/idle-service";
 
+// ** NAV BAR (changes when either logged in or logged out) **
 class Nav extends React.Component {
   logout = () => {
     TokenService.clearAuthToken();

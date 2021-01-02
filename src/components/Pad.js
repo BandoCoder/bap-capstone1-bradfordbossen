@@ -2,63 +2,27 @@ import React from "react";
 import DrumContext from "../contexts/DrumContext";
 import "./Pad.css";
 
+// ** PAD COMPONENT FOR TRIGGERING SOUNDS **
 export default class Pad extends React.Component {
   static contextType = DrumContext;
 
+  //Handle clicking pads
   handleClickPad = (e) => {
     const clickedPad = `${e.target.dataset.beat} ${this.props.pad}`;
     const key = e.target.dataset.pad;
-    const targetCount = e.target.dataset.count;
 
-    let copy = targetCount;
-    let rowNumber = 0;
     let currentBeat = e.target.dataset.beat;
     let nextBeat = "1" + currentBeat.substring(1, 6);
 
-    while (copy > 32) {
-      copy = copy - 32;
-      ++rowNumber;
-    }
-
-    let bottomRange = rowNumber * 32 + 1;
-    let upperTarget = null;
-    if (targetCount < bottomRange + 16) {
-      upperTarget = Number(targetCount) + 16;
-    }
     //Add Remove Pads
     if (e.target.checked) {
-      if (this.context.selectMultiple) {
-        if (upperTarget) {
-          let checkboxes = document.querySelectorAll(
-            `[data-count='${upperTarget}']`
-          );
-          checkboxes.forEach((checkbox) => {
-            if (!checkbox.checked) {
-              this.props.addPad(clickedPad, `${nextBeat} ${key}`);
-            } else {
-              this.props.addPad(clickedPad);
-            }
-            checkbox.checked = 1;
-          });
-        } else {
-          this.props.addPad(clickedPad);
-        }
-      } else {
-        this.props.addPad(clickedPad);
-      }
+      this.props.addPad(clickedPad, `${nextBeat} ${key}`);
     } else {
-      if (this.context.selectMultiple) {
-        let checkboxes = document.querySelectorAll(
-          `[data-count='${upperTarget}']`
-        );
-        checkboxes.forEach((checkbox) => (checkbox.checked = 0));
-        this.props.removePad(clickedPad, `${nextBeat} ${key}`);
-      } else {
-        this.props.removePad(clickedPad);
-      }
+      this.props.removePad(clickedPad, `${nextBeat} ${key}`);
     }
   };
 
+  //Generate proper timecode
   toBarsBeatsSixteenths = (beatCount) => {
     // 9
     let bars, quarterBeat;
@@ -81,6 +45,7 @@ export default class Pad extends React.Component {
     return `${bars}:${quarterBeat}:${sixteenthBeat}`;
   };
   render() {
+    //Generate the number of pads for a row, based on props.count
     let beats = [];
 
     for (let i = 0; i < this.props.count; i++) {

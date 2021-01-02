@@ -2,6 +2,7 @@ import { Component } from "react";
 import AuthApiService from "../services/auth-api-service";
 import "./Signup.css";
 
+// ** SIGNUP FORM COMPONENT **
 export default class Signup extends Component {
   state = {
     error: null,
@@ -12,6 +13,7 @@ export default class Signup extends Component {
     passwordAttempted: false,
   };
 
+  // Handle State
   usernameChanged(user_name) {
     this.setState({ user_name });
   }
@@ -25,6 +27,7 @@ export default class Signup extends Component {
     this.setState({ passwordRepeat });
   }
 
+  // Validate password match
   passwordConfirm = () => {
     if (!this.state.passwordAttempted)
       this.setState({
@@ -37,6 +40,7 @@ export default class Signup extends Component {
     }
   };
 
+  // Handler functions
   handleRegistrationSuccess = (user) => {
     const { history } = this.props;
     history.push("/login");
