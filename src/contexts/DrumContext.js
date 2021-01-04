@@ -6,6 +6,7 @@ const DrumContext = React.createContext({
   addPad: (string) => {},
   removePad: (string) => {},
   setPads: (pads) => {},
+  clearPads: () => {},
 });
 
 export default DrumContext;

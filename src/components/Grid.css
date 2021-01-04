@@ -1,8 +1,33 @@
 .grid {
-  margin: 10px;
   display: flex;
-  border: 2.5px solid;
   justify-content: center;
-  padding: 4px;
-  width: 600px;
+  padding: 3px;
+  width: 820px;
+}
+
+@media only screen and (max-width: 910px) {
+  .grid {
+    max-width: 650px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .grid {
+    max-width: 320px;
+    padding: 1px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .grid {
+    max-width: 260px;
+    padding: 1px;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .grid {
+    max-width: 232px;
+    padding: 1px;
+  }
 }

@@ -25,17 +25,14 @@ class Nav extends React.Component {
               >
                 Dashboard
               </Link>
+            </div>
+            <div className="right">
               <Link
                 className="nav-link-button login-link"
                 to="/"
                 onClick={() => this.logout()}
               >
                 Logout
-              </Link>
-            </div>
-            <div className="right">
-              <Link className="nav-link-button new-link" to="/sequencer">
-                New
               </Link>
             </div>
           </>
@@ -45,13 +42,10 @@ class Nav extends React.Component {
               <Link className="nav-link-button signup-link" to="/signup">
                 Signup
               </Link>
-              <Link className="nav-link-button login-link" to="/login">
-                Login
-              </Link>
             </div>
             <div className="right">
-              <Link className="nav-link-button new-link" to="/sequencer">
-                New
+              <Link className="nav-link-button login-link" to="/login">
+                Login
               </Link>
             </div>
           </>

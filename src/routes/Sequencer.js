@@ -23,11 +23,11 @@ export default class Sequencer extends React.Component {
       disableSave: false,
       saveSuccessful: false,
     };
-    
-//Setup sampler insturment from Tone.js library.
+
+    //Setup sampler insturment from Tone.js library.
 
     this.drumMachine = new Tone.Sampler({
-// Set URLs of each audio file.  This can be populated by a database; for now we just have it in the project.
+      // Set URLs of each audio file.  This can be populated by a database; for now we just have it in the project.
       urls: {
         A1: "/sounds/Kick.wav",
         B1: "/sounds/snare.wav",
@@ -36,11 +36,11 @@ export default class Sequencer extends React.Component {
         E1: "/sounds/open-hat.wav",
         F1: "/sounds/shout.wav",
       },
-// Route sampler to master output audio channel.  Other effects and instruments can be added using these functions within Tone.js library.
+      // Route sampler to master output audio channel.  Other effects and instruments can be added using these functions within Tone.js library.
     }).toDestination();
     Tone.Transport.start();
 
-// Create loop using Tone.js component "Part".  A new "Part" can be created for each new instrument.
+    // Create loop using Tone.js component "Part".  A new "Part" can be created for each new instrument.
     this.part = new Tone.Part((time, note) => {
       this.drumMachine.triggerAttackRelease(note, "16n", time);
     }, this.state.pads);
@@ -48,15 +48,15 @@ export default class Sequencer extends React.Component {
     this.part.loop = true;
   }
 
-// Stop all audio when user navigates away from sequencer page.
+  // Stop all audio when user navigates away from sequencer page.
   componentWillUnmount = () => {
     this.part.stop();
     document.title = "BAP";
   };
 
-// Implement logic to populate pattern from database information, or load new pattern defaults
+  // Implement logic to populate pattern from database information, or load new pattern defaults
   componentDidMount = () => {
-// If JWT present, load user pattern
+    // If JWT present, load user pattern
     const jwt = TokenService.getAuthToken();
     if (jwt) {
       let base64Url = jwt.split(".")[1];
@@ -70,11 +70,11 @@ export default class Sequencer extends React.Component {
         );
       }
     } else {
-// Disable save when not logged in
+      // Disable save when not logged in
       this.setState({ disableSave: true });
     }
     const patternIdToLoad = this.props.match.params.pattern_id;
-// If pattern ID exists, find that pattern and load all parameters of that pattern.
+    // If pattern ID exists, find that pattern and load all parameters of that pattern.
     if (patternIdToLoad != null) {
       PatternsApiService.getPatternById(patternIdToLoad)
         .then((pattern) => {
@@ -96,16 +96,15 @@ export default class Sequencer extends React.Component {
             error: err.error,
           });
         });
-// Load new pattern defaults
+      // Load new pattern defaults
     } else {
       this.setState({ title: "new pattern (click to edit title)" });
     }
   };
 
+  // ** HANDLER FUNCTIONS **
 
-// ** HANDLER FUNCTIONS **
-
-// Handle save new pattern or edit existing pattern (If Null POST, else PATCH)
+  // Handle save new pattern or edit existing pattern (If Null POST, else PATCH)
   handleSave = () => {
     if (this.props.match.params.pattern_id == null) {
       this.insertNewPattern();
@@ -114,7 +113,7 @@ export default class Sequencer extends React.Component {
     }
   };
 
-// POST
+  // POST
   insertNewPattern = () => {
     let pattern_data = {
       bpm: this.state.bpm,
@@ -134,7 +133,7 @@ export default class Sequencer extends React.Component {
       });
   };
 
-// PATCH
+  // PATCH
   saveEditsPattern = () => {
     const patternIdToSave = this.props.match.params.pattern_id;
     let patternStorage = {
@@ -204,6 +203,12 @@ export default class Sequencer extends React.Component {
     this.part.remove(time, value);
   };
 
+  clearPads = () => {
+    this.part.clear();
+    let checkboxes = document.querySelectorAll("input[type=checkbox]");
+    checkboxes.forEach((checkbox) => (checkbox.checked = 0));
+  };
+
   handleEnterOnTitle = (e) => {
     if (e.keyCode === 13 && e.target.checkValidity())
       this.setState({ editingTitle: false });
@@ -214,7 +219,7 @@ export default class Sequencer extends React.Component {
   };
 
   render() {
-    const names = ["Kick", "Snare", "Shake", "Closed Hat", "Open Hat", "Shout"];
+    const names = ["Kick", "Snare", "Shake", "Hat 1", "Hat 2", "Shout"];
     return (
       <>
         {!this.state.editingTitle && (
@@ -294,10 +299,20 @@ export default class Sequencer extends React.Component {
               addPad: this.addPad,
               removePad: this.removePad,
               setPads: this.setPads,
+              clearPads: this.clearPads,
             }}
           >
             <Grid />
           </DrumContext.Provider>
+        </div>
+        <div className="clearBtn">
+          <button
+            onClick={() => {
+              this.clearPads();
+            }}
+          >
+            Clear Pattern
+          </button>
         </div>
       </>
     );

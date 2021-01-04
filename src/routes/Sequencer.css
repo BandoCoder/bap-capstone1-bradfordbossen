@@ -1,11 +1,9 @@
 .sequencer {
-  overflow: auto;
+  border: 3px solid black;
   display: flex;
-  border-style: solid;
-  padding: 5px;
   max-width: fit-content;
-  margin: 40px auto;
-  background-color: black;
+  margin: 10px auto;
+  padding: 10px 0px;
 }
 
 .names {
@@ -17,7 +15,6 @@
 }
 
 .names p {
-  margin: 2px;
   background-color: rgb(0, 0, 0);
   padding: 5px 10px;
   margin: 0px 10px;
@@ -63,4 +60,25 @@ button {
 
 .pattern-title {
   font-size: 25px;
+}
+
+@media only screen and (max-width: 740px) {
+  .names p {
+    font-size: 10px;
+    margin: 0px 3px;
+    padding: 2px 4px;
+    font-weight: 700;
+  }
+  .sequencer {
+    padding: 5px 3px;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .names p {
+    font-size: 8px;
+    margin: 0px 3px;
+    padding: 2px 4px;
+    font-weight: 500;
+  }
 }
