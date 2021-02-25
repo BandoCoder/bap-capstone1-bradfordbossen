@@ -21,7 +21,6 @@ p {
 .nav-link {
   background-color: black;
   padding: 10px 20px;
-  border-radius: 5px;
   color: rgb(153, 0, 255);
   font-weight: 800;
 }
