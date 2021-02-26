@@ -1,9 +1,15 @@
-.sequencer {
-  border: 3px solid black;
-  display: flex;
-  max-width: fit-content;
+.machine {
+  background-color: rgba(0, 0, 0, 0.795);
+  min-width: fit-content;
+  padding: 10px;
   margin: 10px auto;
-  padding: 10px 0px;
+}
+
+.sequencer {
+  border: 1px solid rgba(2, 156, 184, 0.795);
+  display: flex;
+  padding: 5px 0px;
+  margin: auto;
 }
 
 .names {
@@ -15,16 +21,13 @@
 }
 
 .names p {
-  background-color: rgb(0, 0, 0);
   padding: 5px 10px;
-  margin: 0px 10px;
-  font-weight: 800;
-  color: rgb(153, 0, 255);
+  margin: 0px 5px;
 }
 
-.transport {
-  text-align: center;
-  padding: 10px;
+.transport-header {
+  margin: auto;
+  min-width: fi;
 }
 
 .save-block {
@@ -34,22 +37,8 @@
   margin-bottom: 10px;
 }
 
-.transport-header {
-  display: flex;
-  justify-content: space-around;
-}
-
-label {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-button {
-  font-weight: 700;
-}
-
 .pattern-title-input {
-  font-size: 20px;
+  font-size: 15px;
   min-width: 400px;
 }
 
@@ -58,15 +47,14 @@ button {
 }
 
 .pattern-title {
-  font-size: 25px;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 740px) {
   .names p {
     font-size: 10px;
-    margin: 0px 3px;
-    padding: 2px 4px;
-    font-weight: 700;
+    margin: 0px 0px;
+    padding: 1px 2px;
   }
   .sequencer {
     padding: 5px 3px;
@@ -78,6 +66,5 @@ button {
     font-size: 8px;
     margin: 0px 3px;
     padding: 2px 4px;
-    font-weight: 500;
   }
 }

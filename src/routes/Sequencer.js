@@ -221,7 +221,7 @@ export default class Sequencer extends React.Component {
   render() {
     const names = ["Kick", "Snare", "Shake", "Hat 1", "Hat 2", "Shout"];
     return (
-      <>
+      <section className="machine">
         {!this.state.editingTitle && (
           <h2
             className="pattern-title"
@@ -244,17 +244,15 @@ export default class Sequencer extends React.Component {
         )}
         <div className="transport-header">
           <div className="transport">
-            <label>
-              BPM:
-              <input
-                type="number"
-                value={this.state.bpm}
-                className="bpm-selector"
-                onChange={(e) => this.handleBPMChange(e)}
-                min="40"
-                max="360"
-              />
-            </label>
+            <label>BPM:</label>
+            <input
+              type="number"
+              value={this.state.bpm}
+              className="bpm-selector"
+              onChange={(e) => this.handleBPMChange(e)}
+              min="40"
+              max="360"
+            />
 
             <button
               className={this.state.isPlaying ? "playStop" : "play"}
@@ -314,7 +312,7 @@ export default class Sequencer extends React.Component {
             Clear Pattern
           </button>
         </div>
-      </>
+      </section>
     );
   }
 }

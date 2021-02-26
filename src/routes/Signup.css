@@ -19,26 +19,13 @@ input {
   max-width: 300px;
   padding: 7px;
   color: black;
-  font-weight: 600;
 }
 
 input::placeholder {
   color: black;
-  font-weight: 600;
-}
-
-button {
-  background-color: black;
-  color: rgb(153, 0, 255);
-  margin: auto;
-  padding: 10px;
-  width: 80px;
-  cursor: pointer;
-  font-size: 15px;
 }
 
 .error-msg {
   font-size: 20px;
   color: rgb(75, 0, 0);
-  font-weight: 800;
 }

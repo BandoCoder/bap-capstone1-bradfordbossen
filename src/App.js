@@ -82,7 +82,11 @@ class App extends React.Component {
         <header>
           <h1>
             <Link className="home-link" to="/">
-              BAP
+              <img
+                src="https://fontmeme.com/permalink/210225/79ac76e717bac4226daacb63a524b8ca.png"
+                alt="graffiti-creator"
+                border="0"
+              />
             </Link>
           </h1>
           <Nav />

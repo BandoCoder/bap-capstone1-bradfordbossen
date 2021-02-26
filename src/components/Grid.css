@@ -1,8 +1,9 @@
 .grid {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 3px;
   width: 820px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 910px) {
