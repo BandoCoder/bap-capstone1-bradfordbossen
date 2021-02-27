@@ -1,32 +1,35 @@
 .listItem {
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid grey;
+  border-top: 1px solid rgb(59, 59, 59);
   padding: 20px;
 }
 
 .pattern-link {
-  font-family: sans-serif;
-  background-color: black;
   padding: 10px 20px;
   margin: 0px 10px;
-  font-weight: 800;
-  color: rgb(153, 0, 255);
   min-width: 200px;
   text-transform: uppercase;
+  font-size: 20px;
+  color: rgb(255, 94, 0);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: fit-content;
 }
 
 .cancelDelete-pattern {
+  margin-top: 10px;
   padding: 5px 10px;
   font-size: 13px;
 }
 
 .confirmDelete-pattern {
+  margin-top: 10px;
   padding: 5px 10px;
   font-size: 13px;
 }
 
 .delete-pattern {
+  margin-top: 10px;
   padding: 5px 10px;
   font-size: 13px;
 }

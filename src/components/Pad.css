@@ -1,45 +1,53 @@
 .pad-checkbox {
   -webkit-appearance: none;
-  padding: 23px;
-  border-radius: 5px;
+  padding: 32px;
+  border-radius: 3px;
   display: inline-block;
   position: relative;
-  background-color: black;
+  background-color: rgba(2, 156, 184, 0.795);
   margin: 0px 2px;
   outline: none;
   cursor: pointer;
 }
 
 .pad-checkbox:checked {
-  background-color: rgb(153, 0, 255);
+  background-color: lime;
 }
 
-@media only screen and (max-width: 910px) {
+@media only screen and (max-width: 1214px) {
   .pad-checkbox {
-    padding: 18px;
+    padding: 25px;
   }
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 984px) {
   .pad-checkbox {
-    padding: 9px;
+    padding: 20px;
     margin: 0px 1px;
-    border-radius: 3px;
+    border-radius: 2px;
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 791px) {
   .pad-checkbox {
-    padding: 7.6px;
-    margin: 0px 0.5px;
-    border-radius: 3px;
+    padding: 15px;
+    margin: 0px 1px;
+    border-radius: 1px;
   }
 }
 
-@media only screen and (max-width: 309px) {
+@media only screen and (max-width: 634px) {
   .pad-checkbox {
-    padding: 6.7px;
+    padding: 10px;
+    margin: 0px 1px;
+    border-radius: 1px;
+  }
+}
+
+@media only screen and (max-width: 471px) {
+  .pad-checkbox {
+    padding: 8.3px;
     margin: 0px 0.5px;
-    border-radius: 3px;
+    border-radius: 0.7px;
   }
 }

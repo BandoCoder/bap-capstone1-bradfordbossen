@@ -2,43 +2,37 @@
   margin: 20px;
 }
 
-fieldset {
-  display: flex;
-  flex-direction: column;
-  max-width: 650px;
-  margin: 20px auto;
-}
-
 .signupForm h2 {
-  font-size: 25px;
+  font-size: 35px;
+  color: rgb(255, 94, 0);
+  font-family: "Urban Nation", cursive;
+  width: fit-content;
+  margin: auto;
 }
 
 input {
   margin: 10px auto;
-  background-color: whitesmoke;
+  background-color: transparent;
   max-width: 300px;
   padding: 7px;
-  color: black;
-  font-weight: 600;
+  color: lightgray;
+}
+
+input::after {
+  background-color: transparent;
 }
 
 input::placeholder {
-  color: black;
-  font-weight: 600;
-}
-
-button {
-  background-color: black;
-  color: rgb(153, 0, 255);
-  margin: auto;
-  padding: 10px;
-  width: 80px;
-  cursor: pointer;
-  font-size: 15px;
+  color: lightgray;
 }
 
 .error-msg {
   font-size: 20px;
   color: rgb(75, 0, 0);
-  font-weight: 800;
+}
+
+.createBtn {
+  padding: 5px 15px;
+  width: fit-content;
+  margin: 20px auto;
 }
