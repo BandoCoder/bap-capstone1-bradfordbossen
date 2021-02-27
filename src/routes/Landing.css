@@ -1,23 +1,25 @@
 .landing {
-  background-color: rgba(0, 0, 0, 0.897);
+  background-color: rgba(0, 0, 0, 0.938);
   margin: 15px auto;
   max-width: 600px;
-  min-height: 600px;
+  min-height: 500px;
   padding: 20px;
 }
 
 .landing h2 {
-  font-size: 20px;
+  font-size: px;
 }
 
 .landing h1 {
-  font-size: 25px;
+  font-size: 35px;
+  color: rgb(255, 94, 0);
+  font-family: "Urban Nation";
   margin-bottom: 10px;
   text-align: center;
 }
 
 p {
-  margin: 30px;
+  margin: 10px;
 }
 
 .linkContainer {
@@ -26,11 +28,4 @@ p {
 
 .linkContainer h2 {
   margin: 30px 0px;
-}
-
-.nav-link {
-  color: lightgray;
-  border-radius: 10px;
-  background-color: rgba(0, 118, 133, 0.568);
-  padding: 8px;
 }

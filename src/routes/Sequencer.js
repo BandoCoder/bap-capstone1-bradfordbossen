@@ -98,7 +98,7 @@ export default class Sequencer extends React.Component {
         });
       // Load new pattern defaults
     } else {
-      this.setState({ title: "new pattern (click to edit title)" });
+      this.setState({ title: "Title (click to edit)" });
     }
   };
 
@@ -231,56 +231,42 @@ export default class Sequencer extends React.Component {
           </h2>
         )}
         {this.state.editingTitle && (
-          <input
-            type="text"
-            value={this.state.title}
-            className="pattern-title-input"
-            onChange={(e) => this.handleChangeTitle(e)}
-            autoFocus="autofocus"
-            onBlur={(e) => this.handleBlurOnTitle(e)}
-            onKeyDown={(e) => this.handleEnterOnTitle(e)}
-            required
-          />
+          <div className="titleDiv">
+            <input
+              type="text"
+              value={this.state.title}
+              className="pattern-title-input"
+              onChange={(e) => this.handleChangeTitle(e)}
+              autoFocus="autofocus"
+              onBlur={(e) => this.handleBlurOnTitle(e)}
+              onKeyDown={(e) => this.handleEnterOnTitle(e)}
+              required
+            />
+            <span className="titleSpan">*Press enter to finish</span>
+          </div>
         )}
         <div className="transport-header">
           <div className="transport">
-            <label>BPM:</label>
-            <input
-              type="number"
-              value={this.state.bpm}
-              className="bpm-selector"
-              onChange={(e) => this.handleBPMChange(e)}
-              min="40"
-              max="360"
-            />
-
-            <button
-              className={this.state.isPlaying ? "playStop" : "play"}
-              type="button"
-              onClick={(e) => this.handlePlayToggle()}
-            >
-              {this.state.isPlaying ? "stop" : "play"}
-            </button>
-          </div>
-          <div className="save-block">
-            <button
-              className="save-button"
-              type="button"
-              onClick={(e) => this.handleSave()}
-              disabled={this.state.disableSave}
-            >
-              Save Pattern
-            </button>
-            {this.state.saveSuccessful && (
-              <div className="save-message">
-                <p>Saved Pattern</p>
-              </div>
-            )}
-            {this.state.disableSave && (
-              <div className="save-message">
-                <p>Must be logged-in in order to save</p>
-              </div>
-            )}
+            <div className="transport-item">
+              <label>BPM:</label>
+              <input
+                type="number"
+                value={this.state.bpm}
+                className="bpm-selector"
+                onChange={(e) => this.handleBPMChange(e)}
+                min="40"
+                max="360"
+              />
+            </div>
+            <div className="transport-item">
+              <button
+                className={this.state.isPlaying ? "playStop" : "play"}
+                type="button"
+                onClick={(e) => this.handlePlayToggle()}
+              >
+                {this.state.isPlaying ? "Stop" : "Play"}
+              </button>
+            </div>
           </div>
         </div>
         <div className="sequencer">
@@ -303,15 +289,37 @@ export default class Sequencer extends React.Component {
             <Grid />
           </DrumContext.Provider>
         </div>
-        <div className="clearBtn">
-          <button
-            onClick={() => {
-              this.clearPads();
-            }}
-          >
-            Clear Pattern
-          </button>
-        </div>
+        <article className="sequenceFoot">
+          <div className="save-block">
+            <button
+              className="save-button"
+              type="button"
+              onClick={(e) => this.handleSave()}
+              disabled={this.state.disableSave}
+            >
+              Save Pattern
+            </button>
+            {this.state.saveSuccessful && (
+              <div className="save-message">
+                <p>Saved Pattern</p>
+              </div>
+            )}
+            {this.state.disableSave && (
+              <div className="save-message">
+                <p>Must be logged-in in order to save</p>
+              </div>
+            )}
+          </div>
+          <div className="clearBtn">
+            <button
+              onClick={() => {
+                this.clearPads();
+              }}
+            >
+              Clear Pattern
+            </button>
+          </div>
+        </article>
       </section>
     );
   }

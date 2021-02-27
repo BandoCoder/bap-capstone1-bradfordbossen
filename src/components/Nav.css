@@ -1,9 +1,11 @@
 .nav {
   display: flex;
-  padding-left: 30px;
+  padding-left: 10px;
 }
 
 .nav-link-button {
-  margin: 0px 10px;
+  margin: 0px 10px 10px 20px;
   color: lightgray;
+  font-size: 16px;
+  font-weight: 900;
 }

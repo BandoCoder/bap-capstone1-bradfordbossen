@@ -1,7 +1,11 @@
 header {
-  background-color: rgba(0, 0, 0, 0.521);
-  border-bottom: 3px solid black;
+  background-color: rgba(0, 0, 0, 0.747);
   padding: 5px;
+}
+
+.centerHead {
+  width: fit-content;
+  margin-left: 15px;
 }
 
 h1 {
