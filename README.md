@@ -1,6 +1,6 @@
 # BAP
 
-[Live app]https://bap-capstone1-bradfordbosen.vercel.app/
+[Live app]https://bap-capstone1-bandocoder.vercel.app/
 
 [Client repository]https://github.com/BandoCoder/bap-capstone1-bradfordbossen
 
@@ -10,8 +10,8 @@
 
 ## Screenshots
 
-![Landing screenshot](./src/img/BAPscreenshotnew.png)
-![Sequencer screenshot](./src/img/BAPscreenshotnew2.png)
+![Landing screenshot](./src/img/BAPscreenshotnew.PNG)
+![Sequencer screenshot](./src/img/BAPscreenshotnew2.PNG)
 
 ## Description
 
