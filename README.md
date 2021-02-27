@@ -10,8 +10,8 @@
 
 ## Screenshots
 
-![Landing screenshot](./src/img/BAPscreenshot1.png)
-![Sequencer screenshot](./src/img/BAPscreenshot2.png)
+![Landing screenshot](./src/img/BAPscreenshotnew.png)
+![Sequencer screenshot](./src/img/BAPscreenshotnew2.png)
 
 ## Description
 
