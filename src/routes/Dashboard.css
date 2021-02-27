@@ -1,15 +1,21 @@
 .patterns-page {
-  margin: auto;
-  max-width: 610px;
-  border-bottom: 2px solid grey;
+  background-color: rgba(0, 0, 0, 0.918);
+  margin: 30px auto;
+  padding: 10px;
+  max-width: 810px;
+  border-bottom: 1px solid rgb(59, 59, 59);
 }
 
 .patterns-page h2 {
-  font-size: 25px;
+  font-size: 35px;
+  color: rgb(255, 94, 0);
+  font-family: "Urban Nation", cursive;
+  width: fit-content;
+  margin: 10px auto;
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .pattern-box {

@@ -1,12 +1,11 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  padding-left: 10px;
 }
 
 .nav-link-button {
-  background-color: rgb(0, 0, 0);
-  padding: 10px 20px;
-  margin: 0px 10px;
-  font-weight: 800;
-  color: rgb(153, 0, 255);
+  margin: 0px 10px 10px 20px;
+  color: lightgray;
+  font-size: 16px;
+  font-weight: 900;
 }

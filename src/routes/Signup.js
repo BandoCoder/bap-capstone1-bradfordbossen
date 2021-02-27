@@ -135,7 +135,7 @@ export default class Signup extends Component {
               aria-label="Confirm Password"
               required
             />
-            <button className="submit" type="submit" value="submit">
+            <button className="createBtn" type="submit" value="submit">
               Submit
             </button>
             <div role="alert">
