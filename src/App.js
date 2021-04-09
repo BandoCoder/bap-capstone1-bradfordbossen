@@ -44,7 +44,7 @@ class App extends React.Component {
         and queue a timeout just before the token expires
       */
       TokenService.queueCallbackBeforeExpiry(() => {
-        /* the timoue will call this callback just before the token expires */
+        /* the timout will call this callback just before the token expires */
         AuthApiService.postRefreshToken();
       });
     }
